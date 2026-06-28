@@ -1,159 +1,140 @@
-# css
-/* Configurações Globais (Reset) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #f4f6f9;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Layout do Cabeçalho */
-.cabecalho {
-    background-color: #1a2530;
-    color: #ffffff;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cabecalho__logo span {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2a9d8f;
-}
-
-.cabecalho__menu a {
-    color: #ffffff;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.cabecalho__menu a:hover {
-    color: #2a9d8f;
-}
-
-/* Alinhamento dos Cartões */
-.conteudo-principal {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-}
-
-.container-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-/* Estrutura do Cartão e Efeito 3D */
-.cartao {
-    width: 300px;
-    height: 400px;
-    perspective: 1000px;
-    cursor: pointer;
-}
-
-.cartao__conteudo {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-}
-
-.cartao:hover .cartao__conteudo {
-    transform: rotateY(180deg);
-}
-
-/* Configurações das Faces do Cartão */
-.cartao__conteudo__frente, 
-.cartao__conteudo__verso {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 20px;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-    text-align: center;
-}
-
-/* Face da Frente */
-.cartao__conteudo__frente {
-    background-color: #ffffff;
-    color: #ffffff;
-    background-size: cover;
-    background-position: center;
-    justify-content: flex-end;
-    transform: rotateY(0deg);
-    position: relative;
-    overflow: hidden;
-}
-
-.cartao__conteudo__frente::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%);
-    border-radius: 20px;
-    z-index: 1;
-}
-
-.cartao__conteudo__frente h3 {
-    font-size: 20px;
-    font-weight: 600;
-    z-index: 2;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-}
-
-/* Imagens dos cartões */
-.card-elefante {
-    background-image: url('https://picsum.photos/id/1024/300/400');
-}
-
-.card-tromba {
-    background-image: url('https://picsum.photos/id/244/300/400');
-}
-
-.card-fake {
-    background-image: url('https://picsum.photos/id/124/300/400');
-}
-
-/* Face do Verso */
-.cartao__conteudo__verso {
-    background-color: #2a9d8f;
-    color: #ffffff;
-    justify-content: center;
-    transform: rotateY(180deg);
-}
-
-.cartao__conteudo__verso p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* Rodapé */
-.rodape {
-    background-color: #1a2530;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    font-size: 16px;
-    border-top: 3px solid #2a9d8f;
-}
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+  <head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Mitos e Verdades sobre o Futebol Brasileiro</title> 
+    <link rel="stylesheet" href="style.css" />
+  </head> 
+  <body> 
+   <header class="cabecalho">
+  <h1>Mitos e Verdades sobre o Futebol Brasileiro</h1> 
+  <nav> 
+    <a href="#"class="cabecalho-link">Início</a> 
+  </nav> 
+</header> 
+   <main> 
+  <h2>Descubra a verdade Sobre o Futebol Brasileiro,passando o mouse sobre a figura.</h2> 
+  <section> 
+   <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="img/flamengo2.jpeg" alt="Elenco do Flamengo." class="cartao-imagem"> 
+          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="img/spac_paulistano_1902.jpg" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
+        </div> 
+      </div> 
+    </article> 
+    <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="img/selecao-brasileira-1930.jpg" alt="Elenco do Flamengo." class="cartao-imagem"> 
+          <p>O Brasil é o único país a disputar todas as Copas do Mundo.</p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="img/seleção 2026.PNG" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>VERDADE Desde a primeira edição, em 1930, no Uruguai, até os dias de hoje, a Seleção Brasileira nunca ficou de fora de uma Copa do Mundo. Somos a única nação com presença 100% confirmada na história do torneio (e a única pentacampeã, claro).</p> 
+        </div> 
+      </div> 
+    </article> 
+     <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="img/ronaldo amarelo.jpg" alt="Elenco do Flamengo." class="cartao-imagem"> 
+          <p>A camisa da Seleção Brasileira sempre foi a "Amarelinha</p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="img/Ronaldo azul.PNG" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>MITO A clássica camisa canarinho só nasceu em 1954. Antes disso, o Brasil jogava de branco com detalhes azuis. Após o trauma do Maracanazo (a perda da Copa de 1950 para o Uruguai), o uniforme branco foi considerado "azarado".</p> 
+        </div> 
+      </div> 
+    </article> 
+     <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="img/ponte preta.jpg" alt="Elenco da Ponte preta ." class="cartao-imagem"> 
+          <p>O Primeiro campeão brasileiro foi a Ponte preta em 1935</p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="img/galo campeão.jpg" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>Em 1937, o Atlético Mineiro conquistou o Torneio dos Campeões e se tornou o primeiro campeão brasileiro da história.
+            Um título oficial reconhecido pela CBF</p> 
+        </div> 
+      </div> 
+    </article> 
+     <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="img/Qual maior campeao sp.PNG" alt="Card com a pergunta de maior campão paulista e simbos dos clubes" class="cartao-imagem"> 
+          <p>Qual é o clube com maior números de titulos estaduais em São Paulo </p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="img/Maior Campeão paulista.jpg" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>Corinthians, é o maior campeão paulista com 31 títulos.</p> 
+        </div> 
+      </div> 
+    </article> 
+     <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="" alt="Elenco do Flamengo." class="cartao-imagem"> 
+          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
+        </div> 
+      </div> 
+    </article> 
+     <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="" alt="Elenco do Flamengo." class="cartao-imagem"> 
+          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
+        </div> 
+      </div> 
+    </article> 
+     <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="" alt="Elenco do Flamengo." class="cartao-imagem"> 
+          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
+        </div> 
+      </div> 
+    </article> 
+    </article> 
+     <article class="cartao">
+      <div class="cartao-interno"> 
+        <div class="cartao-frente"> 
+          <img src="" alt="Elenco do Flamengo." class="cartao-imagem"> 
+          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
+        </div> 
+        <div class="cartao-verso"> 
+          <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
+        </div> 
+      </div> 
+    </article> 
+    </article> 
+  </section> 
+</main> 
+ 
+    <footer> 
+      <h1>Professor Rafael Biano (Buiu)</h1>
+  <p>Sobre Projeto criado para estudos de HTML, CSS e efeitos 3D com cartões flip. 
+Desenvolvido com foco em responsividade e boas práticas de front-end.</p> 
+</footer> 
+  </body> 
+</html> 
+  
