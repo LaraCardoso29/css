@@ -1,89 +1,66 @@
 # css
-/* Configurações Globais para zerar margens */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Final - Flashcards de Estudo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    background-color: #f4f6f9;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+    <header class="cabecalho">
+        <div class="cabecalho__logo">
+            <span>BioWeb Cards</span>
+        </div>
+        <nav class="cabecalho__menu">
+            <a href="#">Home</a>
+            <a href="#">Meus Cards</a>
+        </nav>
+    </header>
 
-/* Estrutura Flexível do Cabeçalho */
-.cabecalho {
-    background-color: #1a2530;
-    color: #ffffff;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <main class="conteudo-principal">
+        <section class="container-cards">
 
-.cabecalho__logo span {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2a9d8f;
-}
+            <div class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__conteudo__frente card-elefante">
+                        <h3>Qual é o maior mamífero terrestre do planeta?</h3>
+                    </div>
+                    <div class="cartao__conteudo__verso">
+                        <p><strong>O Elefante Africano!</strong><br><br>Eles podem pesar até 7 toneladas e medir cerca de 3,3 metros de altura. Suas grandes orelhas ajudam a irradiar calor para manter o corpo fresco.</p>
+                    </div>
+                </div>
+            </div>
 
-.cabecalho__menu a {
-    color: #ffffff;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 18px;
-    transition: color 0.3s;
-}
+            <div class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__conteudo__frente card-tromba">
+                        <h3>Para que serve a tromba do elefante?</h3>
+                    </div>
+                    <div class="cartao__conteudo__verso">
+                        <p>A tromba serve para respirar, cheirar, beber água, pegar objetos e se comunicar. Ela contém mais de 40.000 músculos e nenhuma estrutura óssea!</p>
+                    </div>
+                </div>
+            </div>
 
-.cabecalho__menu a:hover {
-    color: #2a9d8f;
-}
+            <div class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__conteudo__frente card-fake">
+                        <h3>NASA confirma 15 dias de escuridão total na Terra em 2026?</h3>
+                    </div>
+                    <div class="cartao__conteudo__verso">
+                        <p><strong>FALSA!</strong><br><br>Essa notícia é um boato que circula desde 2015[cite: 12]. A NASA nunca fez tal anúncio e o planeta sempre terá iluminação solar em pelo menos um hemisfério[cite: 12].</p>
+                    </div>
+                </div>
+            </div>
 
-/* Área de Distribuição dos Cards na Tela */
-.conteudo-principal {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-}
+        </section>
+    </main>
 
-.container-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
+    <footer class="rodape">
+        <p>Desenvolvido por: <strong>[Insira Seu Nome Aqui]</strong></p>
+    </footer>
 
-/* Tamanho do Cartão e Perspectiva */
-.cartao {
-    width: 300px;
-    height: 400px;
-    perspective: 1000px; /* Ativa o efeito 3D no navegador */
-    cursor: pointer;
-}
-
-/* O container que vai girar */
-.cartao__conteudo {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-}
-
-/* Gira o card horizontalmente ao passar o mouse */
-.cartao:hover .cartao__conteudo {
-    transform: rotateY(180deg);
-}
-
-/* Configuração idêntica para as duas faces (Frente e Verso) */
-.cartao__conteudo__frente, 
-.cartao__conteudo__verso {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* CORREÇÃO CRÍTICA: Esconde o lado
+</body>
+</html>
