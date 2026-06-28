@@ -48,25 +48,12 @@
         </div> 
         <div class="cartao-verso"> 
           <img src="https://share.google/qF1CzHf2t0FlZKc22" alt="Química Analítica: Desenvolve métodos e técnicas para identificar e quantificar os elementos químicos em uma substância." class="cartao-imagem"> 
-          <p>MITO A clássica camisa canarinho só nasceu em 1954. Antes disso, o Brasil jogava de branco com detalhes azuis. Após o trauma do Maracanazo (a perda da Copa de 1950 para o Uruguai), o uniforme branco foi considerado "azarado".</p> 
-        </div> 
-    
-        <div class="cartao-verso"> 
-          <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
-          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
-        </div> 
+     </div> 
       </div> 
     </article> 
     </article> 
      <article class="cartao">
-      <div class="cartao-interno"> 
-        <div class="cartao-frente"> 
-          <img src="" alt="Elenco do Flamengo." class="cartao-imagem"> 
-          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
-        </div> 
-        <div class="cartao-verso"> 
-          <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
-          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
+     
         </div> 
       </div> 
     </article> 
@@ -75,9 +62,8 @@
 </main> 
  
     <footer> 
-      <h1>Professor Rafael Biano (Buiu)</h1>
-  <p>Sobre Projeto criado para estudos de HTML, CSS e efeitos 3D com cartões flip. 
-Desenvolvido com foco em responsividade e boas práticas de front-end.</p> 
+      <h1>lara cardoso alvino</h1>
+  <p>alura cursos.</p> 
 </footer> 
   </body> 
 </html> 
