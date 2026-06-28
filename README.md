@@ -43,70 +43,14 @@
      <article class="cartao">
       <div class="cartao-interno"> 
         <div class="cartao-frente"> 
-          <img src="img/ronaldo amarelo.jpg" alt="Elenco do Flamengo." class="cartao-imagem"> 
-          <p>A camisa da Seleção Brasileira sempre foi a "Amarelinha</p> 
+          <img src="https://share.google/bKIkEEAGa5ehXF5Ef" alt="quimica." class="cartao-imagem"> 
+          <p>A química é a ciência natural que estuda a matéria</p> 
         </div> 
         <div class="cartao-verso"> 
-          <img src="img/Ronaldo azul.PNG" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
+          <img src="https://share.google/qF1CzHf2t0FlZKc22" alt="Química Analítica: Desenvolve métodos e técnicas para identificar e quantificar os elementos químicos em uma substância." class="cartao-imagem"> 
           <p>MITO A clássica camisa canarinho só nasceu em 1954. Antes disso, o Brasil jogava de branco com detalhes azuis. Após o trauma do Maracanazo (a perda da Copa de 1950 para o Uruguai), o uniforme branco foi considerado "azarado".</p> 
         </div> 
-      </div> 
-    </article> 
-     <article class="cartao">
-      <div class="cartao-interno"> 
-        <div class="cartao-frente"> 
-          <img src="img/ponte preta.jpg" alt="Elenco da Ponte preta ." class="cartao-imagem"> 
-          <p>O Primeiro campeão brasileiro foi a Ponte preta em 1935</p> 
-        </div> 
-        <div class="cartao-verso"> 
-          <img src="img/galo campeão.jpg" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
-          <p>Em 1937, o Atlético Mineiro conquistou o Torneio dos Campeões e se tornou o primeiro campeão brasileiro da história.
-            Um título oficial reconhecido pela CBF</p> 
-        </div> 
-      </div> 
-    </article> 
-     <article class="cartao">
-      <div class="cartao-interno"> 
-        <div class="cartao-frente"> 
-          <img src="img/Qual maior campeao sp.PNG" alt="Card com a pergunta de maior campão paulista e simbos dos clubes" class="cartao-imagem"> 
-          <p>Qual é o clube com maior números de titulos estaduais em São Paulo </p> 
-        </div> 
-        <div class="cartao-verso"> 
-          <img src="img/Maior Campeão paulista.jpg" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
-          <p>Corinthians, é o maior campeão paulista com 31 títulos.</p> 
-        </div> 
-      </div> 
-    </article> 
-     <article class="cartao">
-      <div class="cartao-interno"> 
-        <div class="cartao-frente"> 
-          <img src="" alt="Elenco do Flamengo." class="cartao-imagem"> 
-          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
-        </div> 
-        <div class="cartao-verso"> 
-          <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
-          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
-        </div> 
-      </div> 
-    </article> 
-     <article class="cartao">
-      <div class="cartao-interno"> 
-        <div class="cartao-frente"> 
-          <img src="" alt="Elenco do Flamengo." class="cartao-imagem"> 
-          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
-        </div> 
-        <div class="cartao-verso"> 
-          <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
-          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
-        </div> 
-      </div> 
-    </article> 
-     <article class="cartao">
-      <div class="cartao-interno"> 
-        <div class="cartao-frente"> 
-          <img src="" alt="Elenco do Flamengo." class="cartao-imagem"> 
-          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
-        </div> 
+    
         <div class="cartao-verso"> 
           <img src="" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
           <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
