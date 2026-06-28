@@ -1,5 +1,5 @@
 # css
-/* Configurações Globais para Resetar Margens */
+/* Configurações Globais (Reset) */
 * {
     margin: 0;
     padding: 0;
@@ -14,20 +14,20 @@ body {
     min-height: 100vh;
 }
 
-/* AULA 5 e 6: Cabeçalho com Flexbox e Cores Alteradas */
+/* Layout do Cabeçalho */
 .cabecalho {
     background-color: #1a2530;
     color: #ffffff;
     padding: 20px 40px;
     display: flex;
-    justify-content: space-between; /* Desafio Aula 5 */
-    align-items: center;            /* Desafio Aula 5 */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cabecalho__logo span {
-    font-size: 24px; /* Desafio Aula 6 */
+    font-size: 24px;
     font-weight: bold;
-    color: #2a9d8f;  /* Desafio Aula 6 */
+    color: #2a9d8f;
 }
 
 .cabecalho__menu a {
@@ -42,7 +42,7 @@ body {
     color: #2a9d8f;
 }
 
-/* AULA 5: Distribuição Espacial dos Cards */
+/* Alinhamento dos Cartões */
 .conteudo-principal {
     flex: 1;
     display: flex;
@@ -58,11 +58,11 @@ body {
     justify-content: center;
 }
 
-/* AULA 4, 7 e 8: Estrutura Físico-Visual do Cartão */
+/* Estrutura do Cartão e Efeito 3D */
 .cartao {
-    width: 300px;  /* Dimensões Desafio Aula 4 */
-    height: 400px; /* Dimensões Desafio Aula 4 */
-    perspective: 1000px; /* Ativa o ambiente 3D */
+    width: 300px;
+    height: 400px;
+    perspective: 1000px; /* Crucial para o efeito de virar funcionar em 3D */
     cursor: pointer;
 }
 
@@ -74,40 +74,40 @@ body {
     transition: transform 0.6s ease;
 }
 
-/* AULA 8: Animação que faz o Flashcard Virar */
+/* Faz o cartão girar no eixo Y ao passar o mouse */
 .cartao:hover .cartao__conteudo {
     transform: rotateY(180deg);
 }
 
-/* Configurações de Ocultação Traseira para Corrigir o Preview */
+/* Configurações das Faces do Cartão */
 .cartao__conteudo__frente, 
 .cartao__conteudo__verso {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* CORREÇÃO: Esconde o verso enquanto a frente aparece */
-    -webkit-backface-visibility: hidden;
-    border-radius: 20px; /* Bordas Arredondadas - Desafio Aula 7 */
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15); /* Sombra - Desafio Aula 7 */
+    backface-visibility: hidden; /* IMPORTANTE: Esconde o verso enquanto a frente aparece */
+    -webkit-backface-visibility: hidden; /* Correção para navegadores antigos/safari */
+    border-radius: 20px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
-    padding: 25px; /* Padding Desafio Aula 4 */
+    padding: 25px;
     text-align: center;
 }
 
-/* Visual Frontal Base (Preview Inicial Alinhado) */
+/* Face da Frente */
 .cartao__conteudo__frente {
     background-color: #ffffff;
     color: #ffffff;
     background-size: cover;
     background-position: center;
-    justify-content: flex-end; /* Garante o texto na base sobre a imagem */
-    transform: rotateY(0deg);  /* Fixa a orientação correta inicial */
+    justify-content: flex-end; /* Texto alinhado na base */
+    transform: rotateY(0deg); /* Começa virado para frente */
     position: relative;
     overflow: hidden;
 }
 
-/* Filtro escuro para dar contraste e permitir a leitura correta das frases */
+/* Filtro escuro para dar contraste ao texto branco */
 .cartao__conteudo__frente::after {
     content: "";
     position: absolute;
@@ -124,7 +124,7 @@ body {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-/* Imagens Temáticas Reais Aplicadas nos Flashcards */
+/* Imagens reais dos cartões */
 .card-elefante {
     background-image: url('https://picsum.photos/id/1024/300/400');
 }
@@ -137,12 +137,27 @@ body {
     background-image: url('https://picsum.photos/id/124/300/400');
 }
 
-/* Estilização Interna do Verso (Resposta Oculta) */
+/* Face do Verso (Escondida) */
 .cartao__conteudo__verso {
-    background-color: #2a9d8f; /* Cor do Verso */
+    background-color: #2a9d8f;
     color: #ffffff;
-    justify-content: center;
-    transform: rotateY(180deg); /* Mantém virado para trás inicialmente */
+    justify-content: center; /* Centraliza o texto explicativo */
+    transform: rotateY(180deg); /* Começa invertido e oculto */
 }
 
-.cartao__conteudo__verso
+.cartao__conteudo__verso p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #1a2530;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    border-top: 3px solid #2a9d8f;
+}
+
+ 
