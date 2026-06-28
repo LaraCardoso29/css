@@ -14,25 +14,25 @@
   </nav> 
 </header> 
    <main> 
-  <h2>Descubra a verdade Sobre o Futebol Brasileiro,passando o mouse sobre a figura.</h2> 
+  <h2>Descubra a verdade Sobre o mundo atual,passando o mouse sobre a figura.</h2> 
   <section> 
    <article class="cartao">
       <div class="cartao-interno"> 
         <div class="cartao-frente"> 
-          <img src="img/flamengo2.jpeg" alt="Elenco do Flamengo." class="cartao-imagem"> 
-          <p>Foi o Flamengo o primeiro clube fundado no brasil </p> 
+          <img src="https://share.google/cpj8W57GNyy1e5yLA" alt="Elefante." class="cartao-imagem"> 
+          <p>elefantes usam suas orelhas para controlar a temperatura do corpo </p> 
         </div> 
         <div class="cartao-verso"> 
-          <img src="img/spac_paulistano_1902.jpg" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
-          <p>O São Paulo Athletic Club foi criado por imigrantes ingleses e inicialmente focava no críquete. Mais tarde, com Charles Miller, passou a praticar o futebol e venceu o primeiro Campeonato Paulista oficial em 1902</p> 
+          <img src="https://share.google/HVRCqfu5xIXDBgqe2" class="cartao-imagem"> 
+          <p>pessoas ainda acreditam que a terra e plana</p> 
         </div> 
       </div> 
     </article> 
     <article class="cartao">
       <div class="cartao-interno"> 
         <div class="cartao-frente"> 
-          <img src="img/selecao-brasileira-1930.jpg" alt="Elenco do Flamengo." class="cartao-imagem"> 
-          <p>O Brasil é o único país a disputar todas as Copas do Mundo.</p> 
+          <img src="https://share.google/C3zt5PnLbMqGeDGrl" alt="vacina" class="cartao-imagem"> 
+          <p>Polinaminina revoluciona as pesquisas cientificas.</p> 
         </div> 
         <div class="cartao-verso"> 
           <img src="img/seleção 2026.PNG" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
