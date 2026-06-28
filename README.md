@@ -62,7 +62,7 @@ body {
 .cartao {
     width: 300px;
     height: 400px;
-    perspective: 1000px; /* Crucial para o efeito de virar funcionar em 3D */
+    perspective: 1000px;
     cursor: pointer;
 }
 
@@ -74,7 +74,6 @@ body {
     transition: transform 0.6s ease;
 }
 
-/* Faz o cartão girar no eixo Y ao passar o mouse */
 .cartao:hover .cartao__conteudo {
     transform: rotateY(180deg);
 }
@@ -85,8 +84,8 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* IMPORTANTE: Esconde o verso enquanto a frente aparece */
-    -webkit-backface-visibility: hidden; /* Correção para navegadores antigos/safari */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border-radius: 20px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -101,13 +100,12 @@ body {
     color: #ffffff;
     background-size: cover;
     background-position: center;
-    justify-content: flex-end; /* Texto alinhado na base */
-    transform: rotateY(0deg); /* Começa virado para frente */
+    justify-content: flex-end;
+    transform: rotateY(0deg);
     position: relative;
     overflow: hidden;
 }
 
-/* Filtro escuro para dar contraste ao texto branco */
 .cartao__conteudo__frente::after {
     content: "";
     position: absolute;
@@ -124,7 +122,7 @@ body {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-/* Imagens reais dos cartões */
+/* Imagens dos cartões */
 .card-elefante {
     background-image: url('https://picsum.photos/id/1024/300/400');
 }
@@ -137,12 +135,12 @@ body {
     background-image: url('https://picsum.photos/id/124/300/400');
 }
 
-/* Face do Verso (Escondida) */
+/* Face do Verso */
 .cartao__conteudo__verso {
     background-color: #2a9d8f;
     color: #ffffff;
-    justify-content: center; /* Centraliza o texto explicativo */
-    transform: rotateY(180deg); /* Começa invertido e oculto */
+    justify-content: center;
+    transform: rotateY(180deg);
 }
 
 .cartao__conteudo__verso p {
@@ -159,5 +157,3 @@ body {
     font-size: 16px;
     border-top: 3px solid #2a9d8f;
 }
-
- 
