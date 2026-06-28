@@ -8,7 +8,7 @@
   </head> 
   <body> 
    <header class="cabecalho">
-  <h1>Mitos e Verdades sobre o Futebol Brasileiro</h1> 
+  <h1>Mitos e Verdades sobre o mundo 2026</h1> 
   <nav> 
     <a href="#"class="cabecalho-link">Início</a> 
   </nav> 
