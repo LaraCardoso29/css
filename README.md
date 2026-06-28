@@ -3,7 +3,7 @@
   <head> 
     <meta charset="UTF-8" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <title>Mitos e Verdades sobre o Futebol Brasileiro</title> 
+    <title>Mitos e verdades 2026</title> 
     <link rel="stylesheet" href="style.css" />
   </head> 
   <body> 
@@ -35,8 +35,8 @@
           <p>Polinaminina revoluciona as pesquisas cientificas.</p> 
         </div> 
         <div class="cartao-verso"> 
-          <img src="img/seleção 2026.PNG" alt="Elenco do São Paulo Athletic Club" class="cartao-imagem"> 
-          <p>VERDADE Desde a primeira edição, em 1930, no Uruguai, até os dias de hoje, a Seleção Brasileira nunca ficou de fora de uma Copa do Mundo. Somos a única nação com presença 100% confirmada na história do torneio (e a única pentacampeã, claro).</p> 
+          <img src="https://share.google/nkLGGtqG2jatKKx1n" alt="einsten" class="cartao-imagem"> 
+          <p>VERDADE revolucionou a ciencia,  até os dias de hoje, .</p> 
         </div> 
       </div> 
     </article> 
