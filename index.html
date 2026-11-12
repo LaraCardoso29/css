@@ -1,1 +1,827 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicina Veterinária - Guia Completo & Feira Colégio Morelli</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Fredoka para títulos alegres -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        vet: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        h1, h2, h3 {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* Fundo colorido e orgânico com bolhas verdes, amarelas e turquesa */
+        .bg-colorful-green {
+            background-color: #ecfdf5;
+            background-image: 
+                radial-gradient(at 10% 15%, rgba(52, 211, 153, 0.25) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(250, 204, 21, 0.20) 0px, transparent 45%),
+                radial-gradient(at 85% 85%, rgba(20, 184, 166, 0.25) 0px, transparent 50%),
+                radial-gradient(at 15% 85%, rgba(163, 230, 53, 0.25) 0px, transparent 45%);
+        }
+        .snake-gradient {
+            background: linear-gradient(135deg, #064e3b 0%, #047857 45%, #0d9488 100%);
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-14px) rotate(6deg); }
+        }
+        .animate-float {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+        .dropzone-active {
+            border-color: #10b981 !important;
+            background-color: #d1fae5 !important;
+            transform: scale(1.01);
+        }
+    </style>
+</head>
+<body class="bg-emerald-50/40 text-slate-800 antialiased selection:bg-lime-300 selection:text-vet-950 relative overflow-x-hidden">
 
+<!-- Decorações Flutuantes Coloridas no Fundo -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <i class="fa-solid fa-paw text-emerald-400/20 text-7xl absolute top-28 left-8 animate-float"></i>
+    <i class="fa-solid fa-leaf text-lime-500/25 text-8xl absolute top-1/3 right-6 animate-float" style="animation-delay: 1.5s;"></i>
+    <i class="fa-solid fa-heart text-amber-400/20 text-6xl absolute top-2/3 left-12 animate-float" style="animation-delay: 2.5s;"></i>
+    <i class="fa-solid fa-staff-snake text-teal-500/20 text-8xl absolute bottom-24 right-10 animate-float" style="animation-delay: 3.5s;"></i>
+</div>
+
+<!-- BARRA DE NAVEGAÇÃO COLORIDA -->
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b-2 border-emerald-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-emerald-500 via-teal-500 to-lime-500 rounded-2xl flex items-center justify-center text-white shadow-md shadow-emerald-500/30 transform -rotate-3">
+                    <i class="fa-solid fa-staff-snake text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold text-vet-900 block leading-none">Medicina Veterinária</span>
+                    <span class="text-xs bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent font-bold tracking-wider uppercase">Ciência, Vida & Cores</span>
+                </div>
+            </div>
+            
+            <!-- Links Desktop -->
+            <div class="hidden lg:flex items-center space-x-5 font-semibold text-slate-600 text-sm">
+                <a href="#home" class="hover:text-emerald-600 transition">Home</a>
+                <a href="#historia" class="hover:text-teal-600 transition">História</a>
+                <a href="#mercado" class="hover:text-lime-700 transition">Mercado</a>
+                <a href="#como-ingressar" class="hover:text-emerald-600 transition">Como Ingressar</a>
+                <a href="#veneno-cobra" class="transition flex items-center gap-1.5 text-emerald-950 font-bold bg-gradient-to-r from-lime-200 to-emerald-200 px-3.5 py-1.5 rounded-full border border-emerald-400 shadow-sm hover:scale-105">
+                    <i class="fa-solid fa-staff-snake text-emerald-700"></i>
+                    Toxinologia
+                </a>
+                <a href="#colegio-morelli" class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-700 hover:to-teal-700 text-white px-4 py-2 rounded-full font-bold shadow-md shadow-emerald-500/30 transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-camera mr-1"></i>Colégio Morelli
+                </a>
+            </div>
+
+            <!-- Botão Mobile -->
+            <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden text-emerald-700 text-2xl p-2 bg-emerald-100 rounded-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b-2 border-emerald-200 px-4 pt-2 pb-6 space-y-3">
+        <a href="#home" class="block py-2 text-slate-700 font-semibold">Home & Rotina</a>
+        <a href="#historia" class="block py-2 text-slate-700 font-semibold">Fatos Históricos</a>
+        <a href="#mercado" class="block py-2 text-slate-700 font-semibold">Panorama & Mercado</a>
+        <a href="#como-ingressar" class="block py-2 text-slate-700 font-semibold">Como Ingressar</a>
+        <a href="#areas-atuacao" class="block py-2 text-slate-700 font-semibold">Áreas de Atuação</a>
+        <a href="#veneno-cobra" class="block py-2 text-emerald-800 font-bold">Pesquisa: Venenos de Cobra</a>
+        <a href="#colegio-morelli" class="block py-2 text-teal-600 font-bold">Galeria Feira Colégio Morelli</a>
+    </div>
+</nav>
+
+<main class="relative z-10">
+    <!-- HOME / HERO SECTION -->
+    <header id="home" class="relative bg-colorful-green py-20 lg:py-24 overflow-hidden border-b-2 border-emerald-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-lime-200 via-emerald-200 to-teal-200 text-vet-950 px-4 py-2 rounded-full text-sm font-bold border border-emerald-400 shadow-sm">
+                        <i class="fa-solid fa-sparkles text-amber-500"></i> "Onde a ciência encontra o amor por todas as formas de vida"
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-vet-950 tracking-tight leading-tight">
+                        Medicina <span class="bg-gradient-to-r from-emerald-600 via-teal-500 to-lime-600 bg-clip-text text-transparent">Veterinária</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0 bg-white/70 backdrop-blur-sm p-4 rounded-2xl border border-emerald-200/80 shadow-sm">
+                        <strong class="text-emerald-700">Rotina e Atribuições:</strong> O dia a dia do médico veterinário envolve diagnósticos clínicos, cirurgias, prevenção de doenças, inspeção sanitária de alimentos e pesquisa científica vibrante.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        <strong class="text-teal-700">Importância Social:</strong> Muito além de cuidar dos pets, esse profissional é o pilar da <em>Saúde Única (One Health)</em> — protegendo a humanidade contra zoonoses, garantindo alimentos seguros e preservando a natureza.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#historia" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold px-6 py-3.5 rounded-2xl shadow-lg shadow-emerald-600/30 transition transform hover:-translate-y-0.5 text-center">
+                            Explorar História <i class="fa-solid fa-landmark ml-2"></i>
+                        </a>
+                        <a href="#mercado" class="bg-amber-400 hover:bg-amber-500 text-vet-950 font-bold px-6 py-3.5 rounded-2xl shadow-md shadow-amber-400/30 transition transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-chart-line text-vet-900"></i> Dados de Mercado
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ilustração Card Hero -->
+                <article class="relative">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-emerald-300 relative z-10">
+                        <div class="flex items-center justify-between border-b border-emerald-100 pb-4 mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-lime-500 text-white flex items-center justify-center font-bold text-lg shadow">
+                                    MV
+                                </div>
+                                <div>
+                                    <h2 class="font-bold text-vet-950 text-lg">Símbolo da Veterinária</h2>
+                                    <p class="text-xs text-emerald-600 font-semibold">Identidade e Ética Profissional</p>
+                                </div>
+                            </div>
+                            <span class="bg-gradient-to-r from-amber-200 to-yellow-200 text-amber-900 border border-amber-300 text-xs px-3 py-1 rounded-full font-bold">A Cobra & o Bastão</span>
+                        </div>
+                        <div class="space-y-4 text-slate-600 text-sm">
+                            <p>
+                                O emblema da Medicina Veterinária traz o <strong class="text-emerald-700">Bastão de Esculápio</strong> envolvido por uma <strong class="text-teal-700">serpente</strong> dentro da letra V na cor verde-esmeralda.
+                            </p>
+                            <p class="bg-gradient-to-r from-emerald-50 via-teal-50 to-lime-50 p-4 rounded-2xl border-l-4 border-emerald-500 italic text-vet-900 font-medium">
+                                "A serpente simboliza a sabedoria, o renascimento e a ciência da cura — base da pesquisa biomédica que transforma toxinas em medicamentos vitais."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-emerald-100 flex flex-wrap gap-2 justify-between text-xs font-bold">
+                            <span class="bg-rose-100 text-rose-700 px-3 py-1 rounded-full"><i class="fa-solid fa-heart-pulse mr-1"></i> Saúde Única</span>
+                            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full"><i class="fa-solid fa-shield-cat mr-1"></i> Bem-Estar Animal</span>
+                            <span class="bg-sky-100 text-sky-700 px-3 py-1 rounded-full"><i class="fa-solid fa-earth-americas mr-1"></i> Biodiversidade</span>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-5 -right-5 w-full h-full bg-gradient-to-tr from-lime-400 via-emerald-400 to-teal-400 rounded-3xl -z-10 transform rotate-3 opacity-60"></div>
+                </article>
+            </div>
+        </div>
+    </header>
+
+    <!-- FATOS HISTÓRICOS (Integração com História) -->
+    <section id="historia" class="py-20 bg-white border-b-2 border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-teal-800 font-bold uppercase tracking-wider text-xs bg-teal-100 border border-teal-300 px-4 py-1.5 rounded-full">
+                    <i class="fa-solid fa-book-open mr-1 text-teal-600"></i> Integração com História
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-vet-950 mt-4">Origem e Evolução Histórica</h2>
+                <p class="text-slate-600 mt-3">A relação de cuidado com os animais acompanha a humanidade desde a Antiguidade até os laboratórios de biotecnologia moderna.</p>
+            </div>
+
+            <!-- Linha do Tempo Histórica Colorida -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <article class="bg-gradient-to-b from-amber-50 to-white rounded-3xl p-6 border-2 border-amber-200 shadow-sm hover:shadow-md transition">
+                    <span class="inline-block bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-sm">Antiguidade (2000 a.C.)</span>
+                    <h3 class="text-lg font-bold text-amber-950 mb-2">Primeiros Registros</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        No Egito Antigo (Papiro de Kahun) e na Mesopotâmia (Código de Hamurabi), já existiam leis e técnicas médicas dedicadas a bois, cavalos e cães de caça.
+                    </p>
+                </article>
+
+                <article class="bg-gradient-to-b from-emerald-50 to-white rounded-3xl p-6 border-2 border-emerald-200 shadow-sm hover:shadow-md transition">
+                    <span class="inline-block bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-sm">1761 • França</span>
+                    <h3 class="text-lg font-bold text-emerald-950 mb-2">1ª Escola do Mundo</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Claude Bourgelat funda em Lyon a primeira faculdade de Medicina Veterinária do mundo, impulsionada pela necessidade de combater a peste bovina na Europa.
+                    </p>
+                </article>
+
+                <article class="bg-gradient-to-b from-teal-50 to-white rounded-3xl p-6 border-2 border-teal-200 shadow-sm hover:shadow-md transition">
+                    <span class="inline-block bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-sm">1910 • Brasil</span>
+                    <h3 class="text-lg font-bold text-teal-950 mb-2">Chegada ao Brasil</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Por decreto do presidente Nilo Peçanha, são criadas as primeiras escolas no Rio de Janeiro (Escola Superior de Agricultura e Medicina Veterinária) e no Exército.
+                    </p>
+                </article>
+
+                <article class="bg-gradient-to-b from-lime-50 to-white rounded-3xl p-6 border-2 border-lime-300 shadow-sm hover:shadow-md transition">
+                    <span class="inline-block bg-lime-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-sm">Século XXI • Hoje</span>
+                    <h3 class="text-lg font-bold text-lime-950 mb-2">Alta Tecnologia</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Avanços com cirurgia robótica, células-tronco, diagnóstico por imagem 3D, clonagem animal e pesquisas genômicas aplicadas à saúde animal e humana.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANORAMA ATUAL E MERCADO -->
+    <section id="mercado" class="py-20 bg-colorful-green border-b-2 border-emerald-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-lime-900 font-bold uppercase tracking-wider text-xs bg-lime-200 border border-lime-400 px-4 py-1.5 rounded-full">
+                    <i class="fa-solid fa-chart-pie mr-1 text-lime-700"></i> Dados & Estatísticas
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-vet-950 mt-4">Panorama Atual e Mercado de Trabalho</h2>
+                <p class="text-slate-700 mt-3">O Brasil possui a maior população de médicos veterinários do mundo e um dos mercados pet e agropecuários que mais crescem globalmente.</p>
+            </div>
+
+            <!-- Cards de Indicadores Numéricos Coloridos -->
+            <div class="grid sm:grid-cols-3 gap-6 mb-12">
+                <article class="bg-white rounded-3xl p-6 shadow-md border-b-4 border-emerald-500 text-center">
+                    <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl shadow">
+                        <i class="fa-solid fa-brazilian-real-sign"></i>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-700 uppercase">Média Salarial Nacional</span>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-vet-950 mt-1">R$ 5.400 - R$ 12.000+</p>
+                    <p class="text-xs text-slate-500 mt-2">Varia conforme especialização, concursos públicos e região</p>
+                </article>
+
+                <article class="bg-white rounded-3xl p-6 shadow-md border-b-4 border-teal-500 text-center">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-400 to-cyan-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl shadow">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <span class="text-xs font-bold text-teal-700 uppercase">Profissionais Ativos (CFMV)</span>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-vet-950 mt-1">+200 Mil</p>
+                    <p class="text-xs text-slate-500 mt-2">Liderança mundial em número de profissionais registrados</p>
+                </article>
+
+                <article class="bg-white rounded-3xl p-6 shadow-md border-b-4 border-amber-400 text-center">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl shadow">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <span class="text-xs font-bold text-amber-700 uppercase">Perspectiva Futura</span>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-vet-950 mt-1">+14% ao ano</p>
+                    <p class="text-xs text-slate-500 mt-2">Expansão impulsionada pelo mercado Pet e Biotecnologia</p>
+                </article>
+            </div>
+
+            <!-- Gráfico Visual de Distribuição de Empregabilidade -->
+            <article class="bg-white rounded-3xl p-8 shadow-lg border-2 border-emerald-200">
+                <h3 class="text-xl font-bold text-vet-950 mb-1">Distribuição da Empregabilidade por Setor</h3>
+                <p class="text-xs text-slate-500 mb-6">Percentual aproximado de absorção dos profissionais formados no Brasil:</p>
+                
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-1">
+                            <span class="text-slate-700">Clínica e Cirurgia de Pequenos Animais (Pets)</span>
+                            <span class="text-emerald-600">45%</span>
+                        </div>
+                        <div class="w-full bg-emerald-100 rounded-full h-4 p-0.5">
+                            <div class="bg-gradient-to-r from-emerald-500 to-lime-500 h-3 rounded-full" style="width: 45%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-1">
+                            <span class="text-slate-700">Agronegócio, Produção Animal e Grandes Animais</span>
+                            <span class="text-amber-600">28%</span>
+                        </div>
+                        <div class="w-full bg-amber-100 rounded-full h-4 p-0.5">
+                            <div class="bg-gradient-to-r from-amber-400 to-orange-500 h-3 rounded-full" style="width: 28%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-1">
+                            <span class="text-slate-700">Inspeção Sanitária, Indústria de Alimentos e Saúde Pública</span>
+                            <span class="text-teal-600">17%</span>
+                        </div>
+                        <div class="w-full bg-teal-100 rounded-full h-4 p-0.5">
+                            <div class="bg-gradient-to-r from-teal-500 to-cyan-500 h-3 rounded-full" style="width: 17%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-1">
+                            <span class="text-slate-700">Pesquisa Científica (Toxinologia, Biotecnologia) e Silvestres</span>
+                            <span class="text-purple-600">10%</span>
+                        </div>
+                        <div class="w-full bg-purple-100 rounded-full h-4 p-0.5">
+                            <div class="bg-gradient-to-r from-fuchsia-500 to-purple-500 h-3 rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- COMO INGRESSAR NA FACULDADE -->
+    <section id="como-ingressar" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-800 font-bold uppercase tracking-wider text-xs bg-emerald-100 border border-emerald-300 px-4 py-1.5 rounded-full">Passo a Passo</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-vet-950 mt-4">Como Ingressar na Faculdade</h2>
+                <p class="text-slate-600 mt-3">O curso de graduação tem duração média de <strong>5 anos (10 semestres)</strong>. Veja as principais formas de conquistar sua vaga:</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: ENEM/SISU -->
+                <article class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 border-2 border-emerald-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Via Pública</span>
+                    <h3 class="text-2xl font-bold text-vet-950 mt-1 mb-3">ENEM e SISU</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        A principal porta de entrada para universidades federais e estaduais. Exige uma preparação consistente, principalmente nas áreas de Ciências da Natureza e Redação.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-emerald-200 pt-4 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600"></i> Notas de corte médias: 690 a 770 pontos</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600"></i> Foco em Biologia e Química</li>
+                    </ul>
+                </article>
+
+                <!-- Card 2: Vestibulares Próprios -->
+                <article class="bg-gradient-to-br from-amber-50 to-lime-50 rounded-3xl p-8 border-2 border-amber-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-lime-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <span class="text-xs font-bold text-amber-700 uppercase tracking-widest">Universidades Tradicionais</span>
+                    <h3 class="text-2xl font-bold text-vet-950 mt-1 mb-3">Vestibulares Diretos</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Grandes universidades (USP, UNESP, UNICAMP, UFPR, etc.) possuem exames próprios com fases específicas para cursos altamente concorridos como a Veterinária.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-amber-200 pt-4 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Provas específicas de conhecimentos biológicos</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Questões dissertativas na 2ª fase</li>
+                    </ul>
+                </article>
+
+                <!-- Card 3: PROUNI e FIES -->
+                <article class="bg-gradient-to-br from-sky-50 to-emerald-50 rounded-3xl p-8 border-2 border-sky-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-sky-500 to-emerald-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <span class="text-xs font-bold text-sky-700 uppercase tracking-widest">Bolsas e Financiamento</span>
+                    <h3 class="text-2xl font-bold text-vet-950 mt-1 mb-3">Prouni e FIES</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Para faculdades privadas, você pode usar a nota do ENEM para conseguir bolsas integrais (100%) ou parciais (50%) através do Prouni, ou financiamento via FIES.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-sky-200 pt-4 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-600"></i> Requisitos de renda socioeconômica</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-600"></i> Exige nota mínima de 450 no ENEM</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- Dica para o Estudante -->
+            <div class="mt-12 bg-gradient-to-r from-emerald-700 via-teal-700 to-lime-700 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center md:text-left">
+                    <h4 class="text-xl font-bold text-lime-200"><i class="fa-solid fa-lightbulb text-amber-300 mr-2"></i>O que se estuda no início do curso?</h4>
+                    <p class="text-emerald-50 text-sm max-w-2xl">
+                        Nos primeiros semestres você terá disciplinas básicas fundamentais: <strong>Anatomia Animal, Histologia, Bioquímica, Genética, Fisiologia e Microbiologia</strong>. A parte prática em laboratórios e fazendas começa bem cedo!
+                    </p>
+                </div>
+                <div class="shrink-0">
+                    <span class="inline-block bg-amber-400 text-vet-950 text-xs font-extrabold px-4 py-2.5 rounded-xl uppercase tracking-wider shadow">
+                        Dica de Ouro
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO COLORIDAS -->
+    <section id="areas-atuacao" class="py-20 bg-colorful-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-900 font-bold uppercase tracking-wider text-xs bg-emerald-200 border border-emerald-400 px-4 py-1.5 rounded-full">Especialidades</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-vet-950 mt-4">Campos e Áreas de Atuação</h2>
+                <p class="text-slate-700 mt-3">A Medicina Veterinária possui mais de 80 especialidades regulamentadas, unindo amor aos animais, tecnologia e ciência.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Área 1 -->
+                <article class="bg-white rounded-3xl p-6 shadow-md border-t-4 border-rose-500 hover:-translate-y-1 transition">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-dog"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-vet-950 mb-2">Clínica e Cirurgia de Pets</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Atendimento a cães, gatos e animais de estimação não convencionais. Inclui cardiologia, oncologia, ortopedia e dermatologia.
+                    </p>
+                </article>
+
+                <!-- Área 2 -->
+                <article class="bg-white rounded-3xl p-6 shadow-md border-t-4 border-amber-500 hover:-translate-y-1 transition">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-cow"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-vet-950 mb-2">Grandes Animais & Agro</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Manejo, reprodução e clínica de equinos, bovinos, suínos e ovinos em fazendas e haras. Essencial para a economia agrícola.
+                    </p>
+                </article>
+
+                <!-- Área 3 -->
+                <article class="bg-white rounded-3xl p-6 shadow-md border-t-4 border-emerald-500 hover:-translate-y-1 transition">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-staff-snake"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-vet-950 mb-2">Silvestres & Conservação</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Conservação de espécies, resgate de fauna, medicina de animais selvagens em zoológicos, santuários e centros de triagem.
+                    </p>
+                </article>
+
+                <!-- Área 4 -->
+                <article class="bg-white rounded-3xl p-6 shadow-md border-t-4 border-sky-500 hover:-translate-y-1 transition">
+                    <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-vet-950 mb-2">Inspeção & Saúde Pública</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Garantia da qualidade dos alimentos de origem animal (leite, carne, mel) e controle de zoonoses entre animais e humanos.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PESQUISA: VENENOS DE COBRA (TOXINOLOGIA) -->
+    <section id="veneno-cobra" class="py-20 snake-gradient text-white relative overflow-hidden">
+        <div class="absolute right-0 top-0 opacity-10 translate-x-1/4 -translate-y-1/4 pointer-events-none">
+            <i class="fa-solid fa-staff-snake text-[400px]"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="bg-lime-400 text-vet-950 font-extrabold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest inline-block shadow">
+                        <i class="fa-solid fa-flask mr-1"></i> Área de Pesquisa Especializada
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+                        Toxinologia Veterinária: Do Veneno ao Medicamento
+                    </h2>
+                    <p class="text-emerald-100 text-base sm:text-lg leading-relaxed">
+                        A pesquisa com venenos e toxinas de serpentes é uma das áreas científicas mais fascinantes e estratégicas no Brasil. O médico veterinário atua desde o manejo dos animais até a extração e biotecnologia.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex gap-4 items-start bg-white/10 p-4 rounded-2xl border border-lime-400/30 backdrop-blur-sm">
+                            <div class="w-10 h-10 rounded-xl bg-lime-400 text-vet-950 flex items-center justify-center font-extrabold text-lg shrink-0">
+                                1
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lime-300">Produção de Soros Antiofídicos</h4>
+                                <p class="text-xs text-emerald-50 mt-1">
+                                    O veneno extraído das cobras (como Jararaca e Cascavel) é imunizado em cavalos sob rigoroso controle veterinário para gerar anticorpos que salvam milhares de vidas.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start bg-white/10 p-4 rounded-2xl border border-amber-400/30 backdrop-blur-sm">
+                            <div class="w-10 h-10 rounded-xl bg-amber-400 text-vet-950 flex items-center justify-center font-extrabold text-lg shrink-0">
+                                2
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-amber-300">Desenvolvimento de Novos Remédios</h4>
+                                <p class="text-xs text-emerald-50 mt-1">
+                                    Peptídeos isolados do veneno servem de base para remédios revolucionários. Exemplo: o anti-hipertensivo <em>Captopril</em> foi criado a partir do veneno da Jararaca brasileira.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start bg-white/10 p-4 rounded-2xl border border-cyan-400/30 backdrop-blur-sm">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-400 text-vet-950 flex items-center justify-center font-extrabold text-lg shrink-0">
+                                3
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-cyan-300">Manejo e Herpetologia</h4>
+                                <p class="text-xs text-emerald-50 mt-1">
+                                    O veterinário herpetólogo garante a saúde, nutrição e bem-estar das serpentes mantidas em serpentários renomados, como o <strong>Instituto Butantan</strong> e a <strong>FUNED</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de Estatística e Pesquisa -->
+                <div class="lg:col-span-5">
+                    <div class="bg-vet-950/80 border-2 border-lime-400/40 rounded-3xl p-8 backdrop-blur-md shadow-2xl relative">
+                        <div class="text-center pb-6 border-b border-emerald-800 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-lime-400 to-emerald-500 text-vet-950 rounded-2xl flex items-center justify-center mx-auto mb-3 text-3xl shadow-lg">
+                                <i class="fa-solid fa-vial-virus"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Institutos de Pesquisa no Brasil</h3>
+                            <p class="text-xs text-lime-300 mt-1">Onde os veterinários pesquisadores atuam</p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center text-sm p-3 bg-white/10 rounded-xl">
+                                <span class="font-semibold text-white">Instituto Butantan (SP)</span>
+                                <span class="text-xs bg-lime-400 text-vet-950 font-bold px-2.5 py-1 rounded-full">Referência Mundial</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm p-3 bg-white/10 rounded-xl">
+                                <span class="font-semibold text-white">Instituto Vital Brazil (RJ)</span>
+                                <span class="text-xs bg-amber-400 text-vet-950 font-bold px-2.5 py-1 rounded-full">Produção de Soros</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm p-3 bg-white/10 rounded-xl">
+                                <span class="font-semibold text-white">FUNED (MG)</span>
+                                <span class="text-xs bg-cyan-400 text-vet-950 font-bold px-2.5 py-1 rounded-full">Biotecnologia</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm p-3 bg-white/10 rounded-xl">
+                                <span class="font-semibold text-white">Laboratórios Universitários</span>
+                                <span class="text-xs bg-emerald-400 text-vet-950 font-bold px-2.5 py-1 rounded-full">Pesquisa de Ponta</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-lime-400/15 rounded-2xl border border-lime-400/30 text-xs text-lime-200 text-center italic">
+                            <i class="fa-solid fa-quote-left mr-1"></i> A toxina que causa o dano é exatamente a molécula estudada para salvar vidas.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPAÇO FEIRA DE PROFISSÕES COLÉGIO MORELLI -->
+    <section id="colegio-morelli" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-teal-900 font-bold uppercase tracking-wider text-xs bg-gradient-to-r from-lime-200 to-teal-200 border border-teal-400 px-4 py-1.5 rounded-full inline-flex items-center gap-2">
+                    <i class="fa-solid fa-school text-teal-700"></i> Evento Escolar
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-vet-950 mt-4">
+                    Feira de Profissões - Colégio Morelli
+                </h2>
+                <p class="text-slate-600 mt-3">
+                    Espaço reservado para o registro fotográfico da apresentação do estande de Medicina Veterinária no Colégio Morelli. Adicione as fotos do evento abaixo para compor o mural colorido!
+                </p>
+            </div>
+
+            <!-- ÁREA DE UPLOAD E ANEXO DE FOTOS -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div id="drop-zone" class="border-3 border-dashed border-emerald-400 bg-gradient-to-br from-emerald-50 via-teal-50 to-lime-50 hover:from-emerald-100 hover:to-lime-100 rounded-3xl p-8 text-center transition cursor-pointer relative group shadow-sm">
+                    <input type="file" id="file-input" aria-label="Selecionar fotos da feira" multiple accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20">
+                    
+                    <div class="space-y-4 pointer-events-none">
+                        <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl flex items-center justify-center mx-auto text-2xl group-hover:scale-110 transition shadow-md">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-vet-950">Clique ou arraste as fotos da Feira do Colégio Morelli aqui</h3>
+                            <p class="text-xs text-slate-600 mt-1">Suporta arquivos PNG, JPG, JPEG e WEBP (otimização automática na galeria)</p>
+                        </div>
+                        <span class="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow">
+                            <i class="fa-solid fa-plus mr-1"></i> Selecionar Fotos
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALERIA MURAL DE FOTOS -->
+            <div class="space-y-4">
+                <div class="flex items-center justify-between border-b-2 border-emerald-100 pb-4">
+                    <h3 class="text-xl font-bold text-vet-950 flex items-center gap-2">
+                        <i class="fa-solid fa-images text-emerald-600"></i> Mural da Feira de Profissões
+                    </h3>
+                    <span id="photo-count" class="text-xs bg-emerald-100 border border-emerald-300 font-bold px-3 py-1 rounded-full text-emerald-800">
+                        0 foto(s) anexada(s)
+                    </span>
+                </div>
+
+                <!-- Grid onde as fotos anexadas vão aparecer -->
+                <div id="gallery-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    
+                    <!-- Placeholder Card 1 -->
+                    <div id="placeholder-1" class="border-2 border-dashed border-emerald-300 rounded-3xl p-6 flex flex-col items-center justify-center text-center min-h-[220px] bg-emerald-50/50">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-2">
+                            <i class="fa-regular fa-image"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-800">Espaço para Foto 1</span>
+                        <p class="text-[11px] text-emerald-600 mt-1">Estande de Veterinária Colégio Morelli</p>
+                    </div>
+
+                    <!-- Placeholder Card 2 -->
+                    <div id="placeholder-2" class="border-2 border-dashed border-teal-300 rounded-3xl p-6 flex flex-col items-center justify-center text-center min-h-[220px] bg-teal-50/50">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-2">
+                            <i class="fa-regular fa-image"></i>
+                        </div>
+                        <span class="text-xs font-bold text-teal-800">Espaço para Foto 2</span>
+                        <p class="text-[11px] text-teal-600 mt-1">Apresentação para os estudantes</p>
+                    </div>
+
+                    <!-- Placeholder Card 3 -->
+                    <div id="placeholder-3" class="border-2 border-dashed border-lime-400 rounded-3xl p-6 flex flex-col items-center justify-center text-center min-h-[220px] bg-lime-50/50">
+                        <div class="w-12 h-12 rounded-2xl bg-lime-200 text-lime-700 flex items-center justify-center text-2xl mb-2">
+                            <i class="fa-regular fa-image"></i>
+                        </div>
+                        <span class="text-xs font-bold text-lime-900">Espaço para Foto 3</span>
+                        <p class="text-[11px] text-lime-700 mt-1">Demonstrações práticas e cartilhas</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<!-- RODAPÉ / CRÉDITOS -->
+<footer class="bg-gradient-to-br from-vet-950 via-emerald-950 to-teal-950 text-white border-t-4 border-lime-400 py-14 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8 items-start border-b border-emerald-800 pb-10">
+            
+            <!-- Identificação do Projeto -->
+            <div class="space-y-3 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start space-x-3">
+                    <div class="w-11 h-11 bg-gradient-to-br from-lime-400 to-emerald-500 rounded-2xl flex items-center justify-center text-vet-950 shadow">
+                        <i class="fa-solid fa-staff-snake text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-white block leading-none">Medicina Veterinária</span>
+                        <span class="text-xs text-lime-300 font-semibold">Feira de Profissões • Colégio Morelli</span>
+                    </div>
+                </div>
+                <p class="text-xs text-emerald-200 leading-relaxed">
+                    Projeto interdisciplinar sobre carreiras, história da ciência, estatísticas de mercado e pesquisa em toxinologia.
+                </p>
+            </div>
+
+            <!-- Créditos da Aluna -->
+            <div class="bg-white/10 border border-lime-400/40 rounded-3xl p-5 text-center md:text-left space-y-2 backdrop-blur-sm">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-lime-300 block">Créditos Acadêmicos</span>
+                <p class="text-base font-bold text-white">
+                    <i class="fa-solid fa-user-graduate text-amber-300 mr-2"></i>Lara Cardoso Avilno
+                </p>
+                <p class="text-xs text-emerald-100">
+                    <strong>Turma:</strong> 2ºC &nbsp;|&nbsp; <strong>Número:</strong> 14
+                </p>
+                <p class="text-xs text-emerald-100">
+                    <strong>Disciplina:</strong> Projeto de Vida / Tecnologia & Pesquisa
+                </p>
+            </div>
+
+            <!-- Links de Acesso Rápido ao Projeto -->
+            <div class="text-center md:text-right space-y-2">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-lime-300 block mb-2">Navegação do Projeto</span>
+                <ul class="text-xs text-emerald-100 space-y-1.5 font-medium">
+                    <li><a href="#home" class="hover:text-lime-300 transition">Início & Slogan</a></li>
+                    <li><a href="#historia" class="hover:text-lime-300 transition">Fatos Históricos</a></li>
+                    <li><a href="#mercado" class="hover:text-lime-300 transition">Panorama & Empregabilidade</a></li>
+                    <li><a href="#veneno-cobra" class="hover:text-lime-300 transition">Pesquisa: Venenos de Cobra</a></li>
+                    <li><a href="#colegio-morelli" class="hover:text-lime-300 transition">Galeria Colégio Morelli</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mt-8 text-center text-xs text-emerald-300/80">
+            &copy; 2026 — Desenvolvido por <strong class="text-lime-300">Lara Cardoso Avilno (2ºC - Nº 14)</strong> • Colégio Morelli. Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+<!-- MODAL DE VISUALIZAÇÃO DE IMAGEM DA GALERIA -->
+<div id="image-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-emerald-400">
+        <button id="close-modal" aria-label="Fechar imagem" class="absolute top-4 right-4 bg-emerald-600 text-white w-10 h-10 rounded-full flex items-center justify-center z-10 hover:bg-emerald-700 transition shadow">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="modal-img" src="" alt="Registro ampliado da Feira de Profissões do Colégio Morelli" class="w-full h-auto max-h-[80vh] object-contain bg-black">
+    </div>
+</div>
+
+<!-- SCRIPT DE INTERATIVIDADE E ANEXO DE FOTOS -->
+<script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    const fileInput = document.getElementById('file-input');
+    const galleryGrid = document.getElementById('gallery-grid');
+    const dropZone = document.getElementById('drop-zone');
+    const photoCount = document.getElementById('photo-count');
+
+    let uploadedPhotos = [];
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dropzone-active');
+        }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dropzone-active');
+        }, false);
+    });
+
+    fileInput.addEventListener('change', handleFiles);
+    dropZone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        handleFiles({ target: { files: files } });
+    });
+
+    function handleFiles(e) {
+        const files = Array.from(e.target.files);
+        
+        files.forEach(file => {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    compressImage(event.target.result, (compressedSrc) => {
+                        addImageToGallery(compressedSrc, file.name);
+                    });
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    function compressImage(dataUrl, callback) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            const maxWidth = 1000;
+            const scale = img.width > maxWidth ? maxWidth / img.width : 1;
+            canvas.width = img.width * scale;
+            canvas.height = img.height * scale;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            callback(canvas.toDataURL('image/jpeg', 0.8));
+        };
+        img.src = dataUrl;
+    }
+
+    function addImageToGallery(src, filename) {
+        const placeholders = document.querySelectorAll('[id^="placeholder-"]');
+        placeholders.forEach(el => el.remove());
+
+        uploadedPhotos.push(src);
+        photoCount.textContent = `${uploadedPhotos.length} foto(s) anexada(s)`;
+
+        const card = document.createElement('article');
+        card.className = 'bg-white rounded-3xl overflow-hidden shadow-md border-2 border-emerald-300 group relative flex flex-col justify-between';
+
+        card.innerHTML = `
+            <div class="relative overflow-hidden aspect-video bg-emerald-50 cursor-pointer">
+                <img src="${src}" alt="Foto da Feira de Profissões no Colégio Morelli - ${filename}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                <div class="absolute inset-0 bg-emerald-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2">
+                    <button onclick="openModal('${src}')" class="bg-lime-400 text-vet-950 px-4 py-2 rounded-full shadow hover:bg-lime-300 text-xs font-extrabold">
+                        <i class="fa-solid fa-expand mr-1"></i> Ampliar
+                    </button>
+                </div>
+            </div>
+            <div class="p-3 bg-gradient-to-r from-emerald-50 to-teal-50 flex justify-between items-center text-xs text-slate-700">
+                <span class="truncate max-w-[180px] font-semibold">${filename}</span>
+                <span class="bg-emerald-600 text-white text-[10px] px-2.5 py-0.5 rounded-full font-bold">Colégio Morelli</span>
+            </div>
+        `;
+
+        galleryGrid.appendChild(card);
+    }
+
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeModal = document.getElementById('close-modal');
+
+    function openModal(src) {
+        modalImg.src = src;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
