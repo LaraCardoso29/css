@@ -1,1 +1,255 @@
 
+// MENU MOBILE
+
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+// FECHAR MENU AO CLICAR EM UM LINK
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+});
+
+// GALERIA
+
+const fileInput = document.getElementById('file-input');
+const galleryGrid = document.getElementById('gallery-grid');
+const dropZone = document.getElementById('drop-zone');
+const photoCount = document.getElementById('photo-count');
+const selectPhotos = document.getElementById('select-photos');
+
+// MODAL
+
+const modal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-img');
+const closeModal = document.getElementById('close-modal');
+
+// CONTADOR
+
+let uploadedPhotos = 0;
+
+// ABRIR SELETOR DE FOTOS
+
+selectPhotos.addEventListener('click', () => {
+    fileInput.click();
+});
+
+dropZone.addEventListener('click', (event) => {
+    if (event.target !== selectPhotos) {
+        fileInput.click();
+    }
+});
+
+// ARRASTAR E SOLTAR
+
+['dragenter', 'dragover'].forEach(eventName => {
+
+    dropZone.addEventListener(eventName, event => {
+        event.preventDefault();
+        dropZone.classList.add('dropzone-active');
+    });
+
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+
+    dropZone.addEventListener(eventName, event => {
+        event.preventDefault();
+        dropZone.classList.remove('dropzone-active');
+    });
+
+});
+
+// RECEBER ARQUIVOS ARRASTADOS
+
+dropZone.addEventListener('drop', event => {
+    handleFiles(event.dataTransfer.files);
+});
+
+// RECEBER ARQUIVOS SELECIONADOS
+
+fileInput.addEventListener('change', event => {
+    handleFiles(event.target.files);
+});
+
+// PROCESSAR IMAGENS
+
+function handleFiles(files) {
+
+    Array.from(files).forEach(file => {
+
+        if (!file.type.startsWith('image/')) {
+            return;
+        }
+
+        if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = event => {
+
+            compressImage(event.target.result, compressedSrc => {
+                addImageToGallery(compressedSrc, file.name);
+            });
+
+        };
+
+        reader.readAsDataURL(file);
+
+    });
+
+    // Permite selecionar novamente o mesmo arquivo
+    fileInput.value = '';
+}
+
+// COMPACTAR IMAGENS
+
+function compressImage(dataUrl, callback) {
+
+    const img = new Image();
+
+    img.onload = () => {
+
+        const canvas = document.createElement('canvas');
+
+        const maxWidth = 1000;
+
+        const scale = Math.min(1, maxWidth / img.width);
+
+        canvas.width = Math.round(img.width * scale);
+        canvas.height = Math.round(img.height * scale);
+
+        const ctx = canvas.getContext('2d');
+
+        ctx.drawImage(
+            img,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        callback(canvas.toDataURL('image/jpeg', 0.8));
+
+    };
+
+    img.onerror = () => {
+        alert('Não foi possível carregar esta imagem.');
+    };
+
+    img.src = dataUrl;
+}
+
+// ADICIONAR FOTO À GALERIA
+
+function addImageToGallery(src, filename) {
+
+    // Remover espaços reservados
+    document.querySelectorAll('.placeholder-card').forEach(card => {
+        card.remove();
+    });
+
+    uploadedPhotos++;
+
+    photoCount.textContent = `${uploadedPhotos} foto(s) anexada(s)`;
+
+    const card = document.createElement('article');
+
+    card.className = 'gallery-card';
+
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'gallery-image-container';
+
+    const img = document.createElement('img');
+
+    img.src = src;
+    img.alt = `Foto da Feira de Profissões: ${filename}`;
+    img.loading = 'lazy';
+    img.className = 'gallery-image';
+
+    img.addEventListener('click', () => {
+        openModal(src);
+    });
+
+    imageContainer.appendChild(img);
+
+    const info = document.createElement('div');
+    info.className = 'gallery-info';
+
+    const name = document.createElement('span');
+    name.className = 'gallery-filename';
+    name.textContent = filename;
+
+    const tag = document.createElement('span');
+    tag.className = 'gallery-tag';
+    tag.textContent = 'Colégio Morelli';
+
+    info.appendChild(name);
+    info.appendChild(tag);
+
+    card.appendChild(imageContainer);
+    card.appendChild(info);
+
+    galleryGrid.appendChild(card);
+}
+
+// ABRIR FOTO AMPLIADA
+
+function openModal(src) {
+
+    modalImg.src = src;
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+}
+
+// FECHAR MODAL
+
+closeModal.addEventListener('click', () => {
+
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+
+    modalImg.src = '';
+
+});
+
+// FECHAR CLICANDO FORA DA IMAGEM
+
+modal.addEventListener('click', event => {
+
+    if (event.target === modal) {
+
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+
+        modalImg.src = '';
+
+    }
+
+});
+
+// FECHAR COM ESC
+
+document.addEventListener('keydown', event => {
+
+    if (event.key === 'Escape') {
+
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+
+        modalImg.src = '';
+
+    }
+
+});
+
