@@ -710,83 +710,9 @@
 </div>
 
 <!-- SCRIPT DE INTERATIVIDADE E ANEXO DE FOTOS -->
-<script>
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
 
-    mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
 
-    const fileInput = document.getElementById('file-input');
-    const galleryGrid = document.getElementById('gallery-grid');
-    const dropZone = document.getElementById('drop-zone');
-    const photoCount = document.getElementById('photo-count');
-
-    let uploadedPhotos = [];
-
-    ['dragenter', 'dragover'].forEach(eventName => {
-        dropZone.addEventListener(eventName, (e) => {
-            e.preventDefault();
-            dropZone.classList.add('dropzone-active');
-        }, false);
-    });
-
-    ['dragleave', 'drop'].forEach(eventName => {
-        dropZone.addEventListener(eventName, (e) => {
-            e.preventDefault();
-            dropZone.classList.remove('dropzone-active');
-        }, false);
-    });
-
-    fileInput.addEventListener('change', handleFiles);
-    dropZone.addEventListener('drop', (e) => {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        handleFiles({ target: { files: files } });
-    });
-
-    function handleFiles(e) {
-        const files = Array.from(e.target.files);
-        
-        files.forEach(file => {
-            if (file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    compressImage(event.target.result, (compressedSrc) => {
-                        addImageToGallery(compressedSrc, file.name);
-                    });
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    }
-
-    function compressImage(dataUrl, callback) {
-        const img = new Image();
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-            const maxWidth = 1000;
-            const scale = img.width > maxWidth ? maxWidth / img.width : 1;
-            canvas.width = img.width * scale;
-            canvas.height = img.height * scale;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            callback(canvas.toDataURL('image/jpeg', 0.8));
-        };
-        img.src = dataUrl;
-    }
-
-    function addImageToGallery(src, filename) {
-        const placeholders = document.querySelectorAll('[id^="placeholder-"]');
-        placeholders.forEach(el => el.remove());
-
-        uploadedPhotos.push(src);
-        photoCount.textContent = `${uploadedPhotos.length} foto(s) anexada(s)`;
-
-        const card = document.createElement('article');
-        card.className = 'bg-white rounded-3xl overflow-hidden shadow-md border-2 border-emerald-300 group relative flex flex-col justify-between';
-
+    
         card.innerHTML = `
             <div class="relative overflow-hidden aspect-video bg-emerald-50 cursor-pointer">
                 <img src="${src}" alt="Foto da Feira de Profissões no Colégio Morelli - ${filename}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
@@ -803,6 +729,6 @@
         `;
 
         galleryGrid.appendChild(card);
-    }
+    
 
     
