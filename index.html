@@ -658,36 +658,6 @@
     </div>
 </footer>
 
-<!-- MODAL DE VISUALIZAÇÃO DE IMAGEM DA GALERIA -->
-<div id="image-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-emerald-400">
-        <button id="close-modal" aria-label="Fechar imagem" class="absolute top-4 right-4 bg-emerald-600 text-white w-10 h-10 rounded-full flex items-center justify-center z-10 hover:bg-emerald-700 transition shadow">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <img id="modal-img" src="" alt="Registro ampliado da Feira de Profissões do Colégio Morelli" class="w-full h-auto max-h-[80vh] object-contain bg-black">
-    </div>
-</div>
 
-<!-- SCRIPT DE INTERATIVIDADE E ANEXO DE FOTOS -->
-
-
-    
-        card.innerHTML = `
-            <div class="relative overflow-hidden aspect-video bg-emerald-50 cursor-pointer">
-                <img src="${src}" alt="Foto da Feira de Profissões no Colégio Morelli - ${filename}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                <div class="absolute inset-0 bg-emerald-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2">
-                    <button onclick="openModal('${src}')" class="bg-lime-400 text-vet-950 px-4 py-2 rounded-full shadow hover:bg-lime-300 text-xs font-extrabold">
-                        <i class="fa-solid fa-expand mr-1"></i> Ampliar
-                    </button>
-                </div>
-            </div>
-            <div class="p-3 bg-gradient-to-r from-emerald-50 to-teal-50 flex justify-between items-center text-xs text-slate-700">
-                <span class="truncate max-w-[180px] font-semibold">${filename}</span>
-                <span class="bg-emerald-600 text-white text-[10px] px-2.5 py-0.5 rounded-full font-bold">Colégio Morelli</span>
-            </div>
-        `;
-
-        galleryGrid.appendChild(card);
-    
 
     
